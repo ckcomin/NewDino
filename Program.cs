@@ -53,7 +53,7 @@ namespace asteroid
             Cast cast = new Cast();
 
             // Create the player
-            Ship ship = new Ship("./asteroid/assets/spaceship/spaceship_yellow.png", 70, 50, W_SIZE.Item1/2, W_SIZE.Item2/10 *9, 0, 0, 180);
+            Ship ship = new Ship("Dino/assets/spaceship/spaceship_yellow.png", 70, 50, W_SIZE.Item1/2, W_SIZE.Item2/10 *9, 0, 0, 180);
 
             // Create the Start Button
             // StartGameButton startGameButton = new StartGameButton("./asteroid/assets/others/start_button.png", 305, 113, W_SIZE.Item1/2, W_SIZE.Item2/2);
@@ -74,14 +74,16 @@ namespace asteroid
             // startGameActions["update"] = new List<genie.script.Action>();
             // startGameActions["output"] = new List<genie.script.Action>();
 
-            startGameActions["input"].Add(new HandleShipMovementAction(2, keyboardService));
-            startGameActions["update"].Add(new SpawnAsteroidsAction(1, W_SIZE, (float)1.5));
+            script.AddAction("input", new HandleShipMovementAction(2, keyboardService));
+            script.AddAction("input", new SpawnAsteroidsAction(1, W_SIZE, (float)1.5));
+
+            script.AddAction("update", new HandleEnemiesDirectionAction(1, W_SIZE));
 
             // script.AddAction("input", new HandleStartGameAction(2, mouseService, physicsService, startGameActions));
 
             // Add all update actions
             script.AddAction("update", new MoveActorsAction(1, physicsService));
-            script.AddAction("update", new HandleOffscreenAction(1, W_SIZE));
+            //script.AddAction("update", new HandleOffscreenAction(1, W_SIZE));
 
             // Add all output actions
             script.AddAction("output", new DrawActorsAction(1, screenService));

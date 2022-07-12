@@ -1,6 +1,7 @@
+using genie.cast;
 
 namespace asteroid.cast {
-    class Asteroid : HasLifeActor {
+    class Asteroid : Actor {
 
         private int points;
 
@@ -9,15 +10,16 @@ namespace asteroid.cast {
                         float vx = 0, float vy = 0,
                         float rotation = 0, float rotationVel = 0,
                         
-                        int healthBarYOffset = 0,
-                        int healthBarHeight = 5,
-                        int maxHP = 0,
-                        bool showTextHealth = false,
+                        // change health
+                        // int healthBarYOffset = 0,
+                        // int healthBarHeight = 5,
+                        // int maxHP = 0,
+                        // bool showTextHealth = false,
                         
                         int points = 0) :
-        base(path, width, height, x, y, vx, vy, rotation, rotationVel,
-                    healthBarYOffset, healthBarHeight, maxHP, showTextHealth) {
-            
+        base(path, width, height, x, y, vx, vy, rotation, rotationVel
+                    ) {
+            // healthBarYOffset, healthBarHeight, maxHP, showTextHealth
             this.points = points;
         }
 
