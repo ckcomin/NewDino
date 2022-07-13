@@ -10,7 +10,7 @@ using genie.services.raylib;
 using enemy.script;
 using enemy.cast;
 
-
+using goal.script;
 using goal.cast;
 
 namespace enemy
@@ -87,6 +87,7 @@ namespace enemy
             // Add all update actions
             script.AddAction("update", new MoveActorsAction(1, physicsService));
             script.AddAction("update", new HandleEnemiesCollison(1, physicsService));
+            script.AddAction("update", new HandleGoalCollison(1, physicsService));
             // , audioservice
             //script.AddAction("update", new HandleOffscreenAction(1, W_SIZE));
 
