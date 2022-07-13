@@ -1,6 +1,6 @@
 using genie.cast;
 
-namespace asteroid.cast {
+namespace enemy.cast {
     class PlayerScore : Actor {
 
         private int score;

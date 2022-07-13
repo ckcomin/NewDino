@@ -7,10 +7,10 @@ using genie.test;
 using genie.services;
 using genie.services.raylib;
 
-using asteroid.script;
-using asteroid.cast;
+using enemy.script;
+using enemy.cast;
 
-namespace asteroid
+namespace enemy
 {
     public static class Program
     {
@@ -36,7 +36,7 @@ namespace asteroid
             (int, int) START_POSITION = (500, 700);
             int SHIP_WIDTH = 40;
             int SHIP_LENGTH = 50;
-            string SCREEN_TITLE = "Asteroids";
+            string SCREEN_TITLE = "Enemies";
             int FPS = 120;
             
             // Initiate all services
@@ -56,7 +56,7 @@ namespace asteroid
             Ship ship = new Ship("Dino/assets/spaceship/spaceship_yellow.png", 70, 50, W_SIZE.Item1/2, W_SIZE.Item2/10 *9, 0, 0, 180);
 
             // Create the Start Button
-            // StartGameButton startGameButton = new StartGameButton("./asteroid/assets/others/start_button.png", 305, 113, W_SIZE.Item1/2, W_SIZE.Item2/2);
+            // StartGameButton startGameButton = new StartGameButton("./enemy/assets/others/start_button.png", 305, 113, W_SIZE.Item1/2, W_SIZE.Item2/2);
 
             // Give actors to cast
             cast.AddActor("ship", ship);
@@ -75,7 +75,7 @@ namespace asteroid
             // startGameActions["output"] = new List<genie.script.Action>();
 
             script.AddAction("input", new HandleShipMovementAction(2, keyboardService));
-            script.AddAction("input", new SpawnAsteroidsAction(1, W_SIZE, (float)1.5));
+            script.AddAction("input", new SpawnEnemiesAction(1, W_SIZE, (float)1.5));
 
             script.AddAction("update", new HandleEnemiesDirectionAction(1, W_SIZE));
 

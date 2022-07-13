@@ -1,11 +1,11 @@
 using genie.cast;
 
-namespace asteroid.cast {
-    class Asteroid : Actor {
+namespace enemy.cast {
+    class Enemy : Actor {
 
         private int points;
 
-        public Asteroid(string path, int width, int height,
+        public Enemy(string path, int width, int height,
                         float x = 0, float y = 0,
                         float vx = 0, float vy = 0,
                         float rotation = 0, float rotationVel = 0,

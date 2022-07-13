@@ -4,19 +4,19 @@ using genie.script;
 using genie.services;
 using genie.services.raylib;
 
-using asteroid.cast;
+using enemy.cast;
 
-namespace asteroid.script {
-    class SpawnAsteroidsAction : genie.script.Action {
+namespace enemy.script {
+    class SpawnEnemiesAction : genie.script.Action {
         
         private (int x, int y) windowSize;
         private bool timerStarted;
-        private bool asteroidSpawn;
+        private bool enemySpawn;
         private DateTime lastSpawn;
         private float spawnInterval_ms;
         private Random randomGenerator;
 
-        public SpawnAsteroidsAction(int priority, (int, int) windowSize, float spawnInterval) : base(priority) {
+        public SpawnEnemiesAction(int priority, (int, int) windowSize, float spawnInterval) : base(priority) {
             // this.windowSize = windowSize;
             // this.timerStarted = false;
             // this.asteroidSpawn = false;
@@ -66,7 +66,7 @@ namespace asteroid.script {
 
 
            for(int i=0; i<=2; i++){
-            Asteroid enemy = new Asteroid("Dino/assets/asteroids/asteroid_small.png", 70, 50, 50, 200+i*50, 10, 0, 0, 0, 1);
+            Enemy enemy = new Enemy("Dino/assets/asteroids/asteroid_small.png", 70, 50, 50, 200+i*50, 10, 0, 0, 0, 1);
 
            cast.AddActor("Enemies", enemy);
            

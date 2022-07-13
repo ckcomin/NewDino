@@ -4,7 +4,7 @@ using genie.script;
 using genie.services;
 using genie.services.raylib;
 
-namespace asteroid.script
+namespace enemy.script
 {
     class UpdateScreenAction : genie.script.Action
     {
