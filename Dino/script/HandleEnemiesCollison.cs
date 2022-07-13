@@ -25,10 +25,10 @@ namespace enemy.script {
 
             // Only worry about collision if the ship actually exists
             if (this.ship != null) {
-                foreach (Actor actor in cast.GetActors("enemies")) {
+                foreach (Actor actor in cast.GetActors("Enemies")) {
                     if (this.physicsService.CheckCollision(this.ship, actor)) {
                         cast.RemoveActor("ship", this.ship);
-                        cast.RemoveActor("enemies", actor);
+                        cast.RemoveActor("Enemies", actor);
                         // this.audioService.PlaySound("asteroid/assets/sound/explosion-01.wav", (float) 0.1);
                         this.ship = null;
                         break;
