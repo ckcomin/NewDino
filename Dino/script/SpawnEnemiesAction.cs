@@ -66,7 +66,7 @@ namespace enemy.script {
 
 
            for(int i=0; i<=2; i++){
-            Enemy enemy = new Enemy("Dino/assets/asteroids/asteroid_small.png", 70, 50, 50, 200+i*50, 10, 0, 0, 0, 1);
+            Enemy enemy = new Enemy("Dino/assets/asteroids/asteroid_small.png", 70, 50, 50+i*20, 200+i*50, 10, 0, 0, 0, 1);
 
            cast.AddActor("Enemies", enemy);
            
