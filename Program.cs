@@ -10,6 +10,9 @@ using genie.services.raylib;
 using enemy.script;
 using enemy.cast;
 
+
+using goal.cast;
+
 namespace enemy
 {
     public static class Program
@@ -57,11 +60,11 @@ namespace enemy
 
             // Create the Start Button
             // StartGameButton startGameButton = new StartGameButton("./enemy/assets/others/start_button.png", 305, 113, W_SIZE.Item1/2, W_SIZE.Item2/2);
-
+            Goal goal = new Goal("Dino/assets/spaceship/spaceship_yellow.png", 305, 113, W_SIZE.Item1/2, W_SIZE.Item2/10 , 0, 0, 180);
             // Give actors to cast
             cast.AddActor("ship", ship);
             // cast.AddActor("start_button", startGameButton);
-
+            cast.AddActor("goal", goal);
             // Create the script
             Script script = new Script();
 
