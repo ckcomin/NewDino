@@ -22,7 +22,7 @@ namespace enemy.script {
 
 
         //    for(int i=0; i<=2; i++){
-            Goal goal = new Goal("Dino/assets/spaceship/spaceship_red.png", 305, 113, 500/2, 700/10 , 0, 0, 180);
+            Goal goal = new Goal("Dino/assets/egg (3).png", 100, 80, 500/2, 700/10 , 0, 0);
             cast.AddActor("goal", goal);
             script.RemoveAction("input", this);
 
