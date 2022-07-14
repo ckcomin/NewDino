@@ -58,6 +58,7 @@ namespace enemy
             // Create the player
             Ship ship = new Ship("Dino/assets/spaceship/spaceship_yellow.png", 70, 50, W_SIZE.Item1/2, W_SIZE.Item2/10 *9, 0, 0, 180);
 
+
             // Create the Start Button
             // StartGameButton startGameButton = new StartGameButton("./enemy/assets/others/start_button.png", 305, 113, W_SIZE.Item1/2, W_SIZE.Item2/2);
             Goal goal = new Goal("Dino/assets/spaceship/spaceship_yellow.png", 305, 113, W_SIZE.Item1/2, W_SIZE.Item2/10 , 0, 0, 180);
@@ -76,7 +77,7 @@ namespace enemy
             // startGameActions["input"] = new List<genie.script.Action>();
             // startGameActions["update"] = new List<genie.script.Action>();
             // startGameActions["output"] = new List<genie.script.Action>();
-
+            script.AddAction("input", new HandleShootingAction(2, (float)0.15, (0, -10), keyboardService));
             script.AddAction("input", new HandleShipMovementAction(2, keyboardService));
             script.AddAction("input", new SpawnEnemiesAction(1, W_SIZE, (float)1.5));
 
@@ -89,6 +90,7 @@ namespace enemy
             script.AddAction("update", new HandleEnemiesCollison(1, physicsService));
             script.AddAction("update", new HandleGoalCollison(1, physicsService));
             // , audioservice
+            script.AddAction("update", new HandleBulletsEnemyCollisionAction(1, physicsService));
             //script.AddAction("update", new HandleOffscreenAction(1, W_SIZE));
 
             // Add all output actions
