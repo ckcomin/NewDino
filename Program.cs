@@ -56,7 +56,7 @@ namespace enemy
             Cast cast = new Cast();
 
             // Create the player
-            Ship ship = new Ship("Dino/assets/spaceship/dino_img.png", 120, 120, W_SIZE.Item1/2, W_SIZE.Item2/10 *9, 0, 0, 0);
+            Ship ship = new Ship("Dino/assets/spaceship/green_dino.png", 120, 120, W_SIZE.Item1/2, W_SIZE.Item2/10 *9, 0, 0, 0);
 
 
             // Create the Start Button
