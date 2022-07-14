@@ -43,7 +43,6 @@ namespace enemy.script
 
                 // Reset lastBulletSpawn to Now
                 this.lastBulletSpawn = DateTime.Now;
-                Console.WriteLine("printed");
 
             }
         }

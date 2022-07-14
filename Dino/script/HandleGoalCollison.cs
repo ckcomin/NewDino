@@ -4,7 +4,7 @@ using genie.script;
 using genie.services;
 using genie.services.raylib;
 
-namespace goal.script {
+namespace enemy.script {
     class HandleGoalCollison : genie.script.Action {
          RaylibPhysicsService physicsService;
         // RaylibAudioService audioService;

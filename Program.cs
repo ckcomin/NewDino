@@ -10,8 +10,8 @@ using genie.services.raylib;
 using enemy.script;
 using enemy.cast;
 
-using goal.script;
-using goal.cast;
+// using goal.script;
+// using goal.cast;
 
 namespace enemy
 {
@@ -56,16 +56,20 @@ namespace enemy
             Cast cast = new Cast();
 
             // Create the player
-            Ship ship = new Ship("Dino/assets/spaceship/green_dino.png", 120, 120, W_SIZE.Item1/2, W_SIZE.Item2/10 *9, 0, 0, 0);
+            // Ship ship = new Ship("Dino/assets/spaceship/green_dino.png", 120, 120, W_SIZE.Item1/2, W_SIZE.Item2/10 *9, 0, 0, 0);
 
 
             // Create the Start Button
             // StartGameButton startGameButton = new StartGameButton("./enemy/assets/others/start_button.png", 305, 113, W_SIZE.Item1/2, W_SIZE.Item2/2);
-            Goal goal = new Goal("Dino/assets/spaceship/spaceship_yellow.png", 305, 113, W_SIZE.Item1/2, W_SIZE.Item2/10 , 0, 0, 180);
+            // Goal goal = new Goal("Dino/assets/spaceship/spaceship_red.png", 305, 113, W_SIZE.Item1/2, W_SIZE.Item2/10 , 0, 0, 180);
             // Give actors to cast
-            cast.AddActor("ship", ship);
+            // cast.AddActor("ship", ship);
             // cast.AddActor("start_button", startGameButton);
-            cast.AddActor("goal", goal);
+            // cast.AddActor("goal", goal);
+            Background backgroundImage = new Background("Dino/assets/desert-removebg-preview.png", 700, 500, W_SIZE.Item1/2, W_SIZE.Item2/2, 0, 0, 90, 0);
+            cast.AddActor("background_image", backgroundImage);
+
+
             // Create the script
             Script script = new Script();
 
@@ -80,6 +84,9 @@ namespace enemy
             script.AddAction("input", new HandleShootingAction(2, (float)0.15, (0, -10), keyboardService));
             script.AddAction("input", new HandleShipMovementAction(2, keyboardService));
             script.AddAction("input", new SpawnEnemiesAction(1, W_SIZE, (float)1.5));
+            script.AddAction("input", new SpawnShip(1, W_SIZE));
+            script.AddAction("input", new SpawnGoal(1, W_SIZE));
+
 
             script.AddAction("update", new HandleEnemiesDirectionAction(1, W_SIZE));
 

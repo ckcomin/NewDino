@@ -75,5 +75,6 @@ namespace enemy.script {
             script.RemoveAction("input", this);
 
         }
+        
     }
 }

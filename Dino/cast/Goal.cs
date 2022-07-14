@@ -1,6 +1,6 @@
 using genie.cast;
 
-namespace goal.cast {
+namespace enemy.cast {
     class Goal : Actor {
 
         private int points;
