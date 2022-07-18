@@ -37,7 +37,10 @@ namespace enemy.script {
                 if (collidedBullet != null) {
                     cast.RemoveActor("bullets", collidedBullet);
                     cast.RemoveActor("Enemies", enemy);
-                
+                    if (this.score != null) {
+                        this.score.AddScore(enemy.GetPoints());
+                    }
+
                 }
             }
         }
