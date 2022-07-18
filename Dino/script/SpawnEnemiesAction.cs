@@ -66,11 +66,11 @@ namespace enemy.script {
 
 
            for(int i=0; i<=2; i++){
-            Enemy enemy = new Enemy("Dino/assets/asteroids/pterodactyl-removebg-preview.png", 90, 70, 50+i*20, 200+i*100, 10, 0, 0, 0, 45, 35, 1);
+            Enemy enemy = new Enemy("Dino/assets/asteroids/emeny.png", 70, 60, 50+i*20, 200+i*100, 10, 0, 0, 0, 35, 30, 1);
 
            cast.AddActor("Enemies", enemy);
            
-
+                                        
            }
             script.RemoveAction("input", this);
 

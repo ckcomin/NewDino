@@ -22,6 +22,7 @@ namespace enemy.cast {
                     ) {
             // healthBarYOffset, healthBarHeight, maxHP, showTextHealth
             this.points = points;
+            System.Console.WriteLine(this.GetPath());
         }
 
         public void SetPoints(int points) {
