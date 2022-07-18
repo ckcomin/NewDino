@@ -68,7 +68,10 @@ namespace enemy
             // cast.AddActor("goal", goal);
             Background backgroundImage = new Background("Dino/assets/desert-removebg-preview.png", 700, 500, W_SIZE.Item1/2, W_SIZE.Item2/2, 0, 0, 90, 0);
             cast.AddActor("background_image", backgroundImage);
-
+            
+            // Create the Player Score
+            PlayerScore score = new PlayerScore(path:"", score:0);
+            cast.AddActor("score", score);
 
             // Create the script
             Script script = new Script();
@@ -88,6 +91,7 @@ namespace enemy
             script.AddAction("input", new SpawnGoal(1, W_SIZE));
 
 
+
             script.AddAction("update", new HandleEnemiesDirectionAction(1, W_SIZE));
 
             // script.AddAction("input", new HandleStartGameAction(2, mouseService, physicsService, startGameActions));
@@ -101,8 +105,10 @@ namespace enemy
             //script.AddAction("update", new HandleOffscreenAction(1, W_SIZE));
 
             // Add all output actions
+            script.AddAction("output", new DrawScoreAction(1, screenService));
             script.AddAction("output", new DrawActorsAction(1, screenService));
             script.AddAction("output", new UpdateScreenAction(2, screenService));
+            
 
             // Yo, director, do your thing!
             director.DirectScene(cast, script);
