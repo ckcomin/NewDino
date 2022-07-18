@@ -22,7 +22,7 @@ namespace enemy.script {
 
 
         //    for(int i=0; i<=2; i++){
-            Ship ship = new Ship("Dino/assets/spaceship/green_dino.png", 140, 140, 500/2, 700/10*9, 0, 0, 0);
+            Ship ship = new Ship("Dino/assets/spaceship/dinoComplete45.png", 70, 70, 500/2, 700/10*9, 0, 0, 0, 0, 35, 35);
 
            cast.AddActor("ship", ship);
            script.RemoveAction("input", this);

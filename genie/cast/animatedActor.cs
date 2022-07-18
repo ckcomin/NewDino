@@ -14,8 +14,9 @@ namespace genie.cast {
                             bool eventTriggered = true,
                             float x = 0, float y = 0, float vx = 0, float vy = 0,
                             float rotation = 0, float rotationVel = 0,
+                            float HBwidth = 0, float HBheight = 0,
                             bool flipped = false) : 
-        base(paths[0], width, height, x, y, vx, vy, rotation, rotationVel, flipped)
+        base(paths[0], width, height, x, y, vx, vy, rotation, rotationVel, HBwidth, HBheight, flipped)
         {
             this.paths = paths;
             this.animationSpeed = (float)animationFPS / (float)gameFPS;

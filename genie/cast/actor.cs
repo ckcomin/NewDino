@@ -32,7 +32,9 @@ namespace genie.cast {
         private string path;
         private int width;
         private int height;
-        
+        private float HBheight;
+        private float HBwidth;
+
         private float x;
         private float y;
         private float vx;
@@ -55,6 +57,7 @@ namespace genie.cast {
                     float x = 0, float y = 0,
                     float vx = 0, float vy = 0,
                     float rotation = 0, float rotationVel = 0,
+                    float HBwidth = 0, float HBheight = 0,
                     bool flipped = false) {
             this.path = path;
 
@@ -70,10 +73,14 @@ namespace genie.cast {
             this.rotation = rotation;
             this.rotationVel = rotationVel;
 
+            this.HBwidth = HBwidth;
+            this.HBheight = HBheight;
+
             this.flipped = flipped;
 
             this.previousX = x;
             this.previousY = y;
+            
         }
         
         
@@ -230,6 +237,46 @@ namespace genie.cast {
 
         public void Rotate() {
             this.rotation += this.rotationVel;
+        }
+
+        public float GetHBheight()
+        {
+            return this.HBheight;
+        }
+
+        public float GetHBwidth()
+        {
+            return this.HBwidth;
+        }
+
+        public void SetHBheight(int HBheight)
+        {
+            this.HBheight = HBheight;
+        }
+
+        public void SetHBwidth(int HBwidth)
+        {
+            this.HBwidth = HBwidth;
+        }
+
+        public float GetHBTopLeftX()
+        {   
+            float x = this.GetX() ;//+ (this.GetWidth() * 0.25f);
+            return x;
+        }
+
+        public float GetHBTopLeftY()
+        {   
+            float y = this.GetY() ;//+ (this.GetHeight() * (float)0.25);
+            return y;
+        }
+
+        public (float, float) GetHBTopLeft()
+        {
+            //(float X, float Y) topleft = this.GetPosition();
+            float x = this.GetHBTopLeftX();
+            float y = this.GetHBTopLeftY();
+            return (x, y);
         }
     }
 }

@@ -26,6 +26,12 @@ namespace enemy.script {
             // Only worry about collision if the ship actually exists
             if (this.ship != null) {
                 foreach (Actor actor in cast.GetActors("Enemies")) {
+                    //System.Console.WriteLine(this.ship.GetHBTopLeft());
+                    System.Console.WriteLine(this.ship.GetTopLeft());
+                    System.Console.WriteLine(this.ship.GetHBTopLeft());
+                    System.Console.WriteLine(" ");
+                    System.Console.WriteLine(this.ship.GetX());
+                    System.Console.WriteLine(this.ship.GetY());
                     if (this.physicsService.CheckCollision(this.ship, actor)) {
                         cast.RemoveActor("ship", this.ship);
                         cast.RemoveActor("Enemies", actor);

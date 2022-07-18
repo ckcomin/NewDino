@@ -19,11 +19,11 @@ namespace genie.services.raylib {
         }
 
         /***************************************************************
-        * Turns an actor into a Rectangle for the purpose of collision checking
+        * Gets a Rectangle that will act as the hitbox (not the same as the actors size)
         ****************************************************************/
-        private Rectangle GetRectangle(Actor actor) {
-            (float x, float y) topLeft = actor.GetTopLeft();
-            return new Rectangle(topLeft.x, topLeft.y, actor.GetWidth(), actor.GetHeight());
+        public Rectangle GetRectangle(Actor actor) {
+            (float x, float y) topLeft = actor.GetHBTopLeft();
+            return new Rectangle(topLeft.x, topLeft.y, actor.GetHBwidth(), actor.GetHBheight());
         }
 
         /***************************************************************
