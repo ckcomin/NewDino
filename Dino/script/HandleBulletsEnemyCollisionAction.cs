@@ -39,7 +39,7 @@ namespace enemy.script {
                     cast.RemoveActor("Enemies", enemy);
                     if (this.score != null) {
                         this.score.AddScore(enemy.GetPoints());
-                        Console.WriteLine("did it 3");
+                        //Console.WriteLine("did it 3");
                     }
 
                 }

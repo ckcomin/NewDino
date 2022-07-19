@@ -22,13 +22,13 @@ namespace enemy.script {
             // Look for the score actor in the actors list
             if (this.score == null) {
                 this.score = (PlayerScore?) cast.GetFirstActor("score");
-                Console.WriteLine("did it");
+                //Console.WriteLine("did it");
             }
 
             // Draw the score on the screen
             if (this.score != null) {
                 this.screenService.DrawText("Score: " + this.score.GetScore().ToString(), fontSize:48, color:Color.WHITE, position:(20, 20) );
-                Console.WriteLine("did it 2");
+                //Console.WriteLine("did it 2");
             }
         }
     }

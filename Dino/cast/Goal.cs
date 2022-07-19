@@ -5,10 +5,11 @@ namespace enemy.cast {
 
         private int points;
 
-        public Goal(string path, int width, int height,
+        public Goal(string path, int width = 80, int height = 90,
                         float x = 0, float y = 0,
                         float vx = 0, float vy = 0,
                         float rotation = 0, float rotationVel = 0,
+                        float HBwidth = 70, float HBheight = 80,
                         
                         // change health
                         // int healthBarYOffset = 0,
@@ -17,10 +18,11 @@ namespace enemy.cast {
                         // bool showTextHealth = false,
                         
                         int points = 0) :
-        base(path, width, height, x, y, vx, vy, rotation, rotationVel
+        base(path, width, height, x, y, vx, vy, rotation, rotationVel, HBwidth, HBheight
                     ) {
             // healthBarYOffset, healthBarHeight, maxHP, showTextHealth
             this.points = points;
+        
         }
 
         public void SetPoints(int points) {
@@ -30,5 +32,7 @@ namespace enemy.cast {
         public int GetPoints() {
             return this.points;
         }
+
+
     }
 }

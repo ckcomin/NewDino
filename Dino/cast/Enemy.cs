@@ -9,7 +9,7 @@ namespace enemy.cast {
                         float x = 0, float y = 0,
                         float vx = 0, float vy = 0,
                         float rotation = 0, float rotationVel = 0,
-                        float HBwidth = 0, float HBheight = 0,
+                        float HBwidth = 35, float HBheight = 30,
                         
                         // change health
                         // int healthBarYOffset = 0,
@@ -22,7 +22,7 @@ namespace enemy.cast {
                     ) {
             // healthBarYOffset, healthBarHeight, maxHP, showTextHealth
             this.points = points;
-            System.Console.WriteLine(this.GetPath());
+            //System.Console.WriteLine(this.GetPath());
         }
 
         public void SetPoints(int points) {
